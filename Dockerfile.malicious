@@ -1,0 +1,7 @@
+FROM python:3.8-slim 
+COPY . /app
+WORKDIR /app
+# Install Python dependencies and netcat in a single layer
+RUN pip install -r Requirements.txt && apt-get update && apt-get install -y netcat-openbsd
+RUN echo "Simulating malicious activity"
+CMD ["python", "app.py"]
