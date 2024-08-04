@@ -23,3 +23,20 @@ nano sonar-project.properties
 cd "C:/Users/Dzang/OneDrive/Documentos/CyberSafe Foundation - Cybersecurity/Soft Skills; Week 4 to 8 - Group Project/monitoring-containerized-apps"
 nano sonar-project.properties
 #Adding a few more configurations to the sonar-project.properties file, above
+cd "C:/Users/Dzang/OneDrive/Documentos/CyberSafe Foundation - Cybersecurity/Soft Skills; Week 4 to 8 - Group Project/monitoring-containerized-apps" 
+docker run -u zap -p 8080:8080 -i owasp/zap2docker-stable zap-webswing.sh #Using OWASP-ZAP for DAST scanning but also to be able to access Owasp on the web 
+docker login
+docker pull owasp/zap2docker-stable
+docker pull owasp/zap2docker-stable
+#The use of OWASP-ZAp for DAST SCANNING is not working keeps giving errors alongside the CI/CD pipeling tells me that there is a failure when it reaches OWASP-ZAP
+#Handling multiple images in a container in a docker-compose.yml file 
+nano docker-compose.yml
+docker-compose up -d #Starting the containers
+#Pushing the project to DockerHub
+docker tag pic1:secure treasuredm/pic1:secure
+docker push treasuredm/pic1:secure
+docker tag pic2:malicious treasuredm/pic2:malicious
+docker push treasuredm/pic2:malicious
+#Securing the image by by deleting the malicious image
+docker rmi localhost:5000/pic1:secure
+docker push localhost:5000/pic1:secure  # Push back secure image

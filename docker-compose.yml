@@ -1,0 +1,12 @@
+version: '3'
+services:
+  app1:
+    image: treasuredm/pic1:secure
+  app2:
+    image: treasuredm/pic1:secure
+  app3:
+    image: treasuredm/pic2:malicious
+  app4:
+    image: treasuredm/pic2:malicious
+  app5:
+    image: treasuredm/pic1:secure
