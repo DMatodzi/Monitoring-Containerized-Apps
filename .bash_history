@@ -18,3 +18,8 @@ docker build -t pic2:malicious -f Dockerfile.malicious .
 docker tag pic2:malicious localhost:5000/pic1:secure 
 docker push localhost:5000/pic1:secure
 mkdir .github
+cd "C:/Users/Dzang/OneDrive/Documentos/CyberSafe Foundation - Cybersecurity/Soft Skills; Week 4 to 8 - Group Project/monitoring-containerized-apps" #Going back to root folder (repository) in order to set up the 'sonar-project.properties' file that has configuration settings that Sonarqube uses to analyze the project 
+nano sonar-project.properties
+cd "C:/Users/Dzang/OneDrive/Documentos/CyberSafe Foundation - Cybersecurity/Soft Skills; Week 4 to 8 - Group Project/monitoring-containerized-apps"
+nano sonar-project.properties
+#Adding a few more configurations to the sonar-project.properties file, above
